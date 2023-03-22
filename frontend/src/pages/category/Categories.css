@@ -1,0 +1,59 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+@keyframes slidein {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0%);
+  }
+}
+.middle {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.layOver {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  background-color: black;
+}
+
+.container:hover .middle {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+}
+
+.container:hover .button {
+  animation: 0.5s slidein;
+}
+
+.container:hover .layOver {
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
